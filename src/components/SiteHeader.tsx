@@ -29,19 +29,25 @@ export function SiteHeader({
     <header
       className="fixed inset-x-0 top-0 z-50 transition-all duration-500"
       style={{
-        background: scrolled ? "oklch(1 0 0 / 92%)" : "oklch(1 0 0 / 70%)",
-        backdropFilter: "blur(16px)",
+        background: scrolled ? "oklch(1 0 0 / 96%)" : "oklch(1 0 0 / 82%)",
+        backdropFilter: "blur(18px)",
         borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+        boxShadow: scrolled ? "var(--shadow-card)" : "none",
       }}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <span
+        className="block h-[3px] w-full"
+        style={{ background: isNova ? "var(--gradient-nova)" : "var(--gradient-gold)" }}
+      />
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
         <Link to={isNova ? "/nesai-nova" : "/"} className="flex items-center">
           <img
             src={isNova ? novaLogo.url : nesmaLogo.url}
             alt={isNova ? "NesAI Nova" : "Nesma Holdings (Pty) Ltd"}
-            className={isNova ? "h-11 w-auto" : "h-9 w-auto"}
+            className={isNova ? "h-16 w-auto sm:h-[72px]" : "h-14 w-auto sm:h-16"}
           />
         </Link>
+
 
         <nav className="hidden items-center gap-8 lg:flex">
           {items.map((item) => (

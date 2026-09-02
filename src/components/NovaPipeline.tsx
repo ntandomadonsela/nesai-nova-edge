@@ -4,27 +4,27 @@ const stages = [
   {
     key: "ingest",
     label: "Ingest",
-    detail: "Domain corpora, speech, imagery and enterprise documents received into a ring fenced workspace.",
+    detail: "Corpora, speech and documents received into a ring fenced workspace.",
   },
   {
     key: "annotate",
     label: "Annotate",
-    detail: "Named entity, intent, segmentation, keypoint and diarisation tasks dispatched to vetted specialists.",
+    detail: "Entity, intent and segmentation tasks routed to vetted specialists.",
   },
   {
     key: "review",
     label: "Consensus review",
-    detail: "Dual pass adjudication with inter annotator agreement scored against gold standard items.",
+    detail: "Dual pass adjudication scored against gold standard items.",
   },
   {
     key: "rlhf",
-    label: "Preference and rubric grading",
-    detail: "Pairwise ranking and multi dimensional rubric scoring across accuracy, tone, safety and format.",
+    label: "Preference grading",
+    detail: "Pairwise ranking and rubric scoring for accuracy, tone and safety.",
   },
   {
     key: "deliver",
     label: "Deliver",
-    detail: "Structured, versioned datasets released under POPIA and GDPR governance with a full audit trail.",
+    detail: "Versioned datasets released under POPIA and GDPR governance.",
   },
 ];
 

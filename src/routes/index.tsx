@@ -197,7 +197,7 @@ function HoldingsPage() {
 
           <Reveal delay={120}>
             <div className="card-corporate p-8">
-              <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-10 w-auto" />
+              <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-16 w-auto" />
               <div className="mt-8 rule-gold" />
               <div className="mt-6 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 Office of the Managing Director
@@ -421,7 +421,7 @@ function HoldingsPage() {
 
       <footer className="border-t border-border bg-background py-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between">
-          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-9 w-auto" />
+          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-14 w-auto" />
           <div className="flex flex-wrap items-center gap-6 text-[12px] text-muted-foreground">
             <a href="#about">About</a>
             <a href="#sectors">Sectors</a>
