@@ -194,15 +194,23 @@ function NovaPage() {
       </section>
 
 
-      <section id="platform" className="border-y border-border" style={{ background: "var(--nova-tint)" }}>
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-center">
+      <section
+        id="platform"
+        className="relative overflow-hidden border-y border-border"
+        style={{
+          background:
+            "radial-gradient(70% 60% at 20% 0%, color-mix(in oklab, var(--nova) 10%, transparent) 0%, transparent 65%), var(--nova-tint)",
+        }}
+      >
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-28 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <div>
               <div className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--nova)" }}>
                 NesAI Nova Core
               </div>
-              <h2 className="mt-4 text-3xl text-navy sm:text-4xl">
-                Automation that keeps quality measurable
+              <h2 className="mt-4 text-[clamp(28px,3.6vw,46px)] leading-[1.1] text-navy">
+                Automation that keeps
+                <span className="text-nova-gradient block italic">quality measurable.</span>
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 Every task entering our operation is routed automatically to a qualified trainer,
@@ -210,18 +218,19 @@ function NovaPage() {
                 before release. Clients see throughput, agreement scores and exception queues in
                 real time, with a full audit trail retained for every record delivered.
               </p>
-              <div className="mt-8 grid grid-cols-2 gap-6">
+              <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border">
                 {operations.map((o) => (
-                  <div key={o.label}>
+                  <div key={o.label} className="bg-card px-6 py-5">
                     <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                       {o.label}
                     </div>
-                    <div className="mt-1 text-lg text-navy">{o.value}</div>
+                    <div className="mt-1 font-serif text-2xl text-navy">{o.value}</div>
                   </div>
                 ))}
               </div>
             </div>
           </Reveal>
+
 
           <Reveal delay={100}>
             <div className="card-corporate p-8">
