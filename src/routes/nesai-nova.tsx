@@ -106,48 +106,39 @@ function NovaPage() {
     <div className="min-h-screen bg-background">
       <SiteHeader variant="nova" items={nav} />
 
-      <section
-        id="overview"
-        className="relative overflow-hidden border-b border-border"
-        style={{
-          background:
-            "radial-gradient(120% 90% at 12% 0%, var(--nova-tint) 0%, var(--background) 62%), radial-gradient(90% 80% at 92% 10%, oklch(0.95 0.045 296) 0%, transparent 60%)",
-        }}
-      >
+      <section id="overview" className="aurora-nova relative overflow-hidden border-b border-border">
         <span
           className="absolute inset-x-0 top-0 h-[3px]"
           style={{ background: "var(--gradient-nova)" }}
         />
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-36 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pb-32 lg:pt-40">
+        <div className="hairline-grid pointer-events-none absolute inset-0 opacity-40" />
+        <div className="relative mx-auto grid max-w-7xl gap-14 px-6 pb-28 pt-36 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pb-36 lg:pt-44">
           <Reveal>
             <div>
-              <div className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--nova)" }}>
+              <span className="pill">
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ background: "var(--gradient-nova)", animation: "pulse-dot 2.4s infinite" }}
+                />
                 A division of Nesma Holdings (Pty) Ltd
-              </div>
-              <img src={novaLogo.url} alt="NesAI Nova" className="mt-7 h-28 w-auto sm:h-36" />
-              <h1 className="mt-9 text-4xl leading-tight text-navy sm:text-5xl">
-                Human intelligence engineered for artificial intelligence
+              </span>
+              <img src={novaLogo.url} alt="NesAI Nova" className="mt-8 h-28 w-auto sm:h-36" />
+              <h1 className="mt-9 text-[clamp(34px,4.6vw,58px)] leading-[1.06] text-navy">
+                Human intelligence,
+                <span className="text-nova-gradient block italic">engineered for machines.</span>
               </h1>
-              <span className="mt-6 block h-[2px] w-20" style={{ background: "var(--gradient-nova)" }} />
+              <span className="mt-7 block h-[2px] w-24" style={{ background: "var(--gradient-nova)" }} />
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
                 NesAI Nova builds, labels and evaluates the data that frontier and enterprise models
                 depend on. We combine trained African talent, disciplined quality systems and our own
                 delivery platform to produce training data that is accurate, traceable and ready for
                 production use.
               </p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a
-                  href="#services"
-                  className="rounded-md px-6 py-3 text-[12px] uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90"
-                  style={{ background: "var(--gradient-nova)", boxShadow: "var(--shadow-card)" }}
-                >
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a href="#services" className="btn-nova">
                   Explore our services
                 </a>
-                <a
-                  href="#contact"
-                  className="rounded-md border px-6 py-3 text-[12px] uppercase tracking-[0.18em] transition-colors"
-                  style={{ borderColor: "var(--nova)", color: "var(--nova)" }}
-                >
+                <a href="#contact" className="btn-nova-ghost">
                   Request a pilot
                 </a>
               </div>
@@ -161,16 +152,17 @@ function NovaPage() {
       </section>
 
 
-      <section id="services" className="mx-auto max-w-7xl px-6 py-24">
+      <section id="services" className="mx-auto max-w-7xl px-6 py-28">
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--nova)" }}>
               Service pillars
             </div>
-            <h2 className="mt-4 text-3xl text-navy sm:text-4xl">
-              Five capabilities, delivered as one accountable programme
+            <h2 className="mt-4 text-[clamp(28px,3.6vw,46px)] leading-[1.1] text-navy">
+              Five capabilities, delivered as
+              <span className="text-nova-gradient block italic">one accountable programme.</span>
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               Engagements begin with a scoped pilot and scale into managed programmes with fixed
               quality thresholds, agreed throughput and continuous reporting.
             </p>
@@ -180,21 +172,16 @@ function NovaPage() {
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {pillars.map((p, i) => (
             <Reveal key={p.n} delay={i * 70}>
-              <article className="card-corporate h-full p-8">
-                <div
-                  className="text-[11px] uppercase tracking-[0.24em]"
-                  style={{ color: "var(--nova)" }}
-                >
-                  {p.n}
-                </div>
-                <h3 className="mt-3 text-2xl text-navy">{p.title}</h3>
+              <article className="card-corporate card-edge-nova h-full p-9">
+                <div className="glyph-nova">{p.n}</div>
+                <h3 className="mt-4 text-2xl leading-snug text-navy">{p.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                <ul className="mt-6 space-y-2">
+                <ul className="mt-6 space-y-2 border-t border-border pt-6">
                   {p.points.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-sm text-navy">
                       <span
                         className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-                        style={{ background: "var(--nova)" }}
+                        style={{ background: "var(--gradient-nova)" }}
                       />
                       {point}
                     </li>
@@ -205,6 +192,7 @@ function NovaPage() {
           ))}
         </div>
       </section>
+
 
       <section id="platform" className="border-y border-border" style={{ background: "var(--nova-tint)" }}>
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-center">
