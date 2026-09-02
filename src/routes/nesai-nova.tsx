@@ -339,7 +339,7 @@ function NovaPage() {
 
       <footer className="border-t border-border bg-background py-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between">
-          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-9 w-auto" />
+          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-14 w-auto" />
           <div className="flex flex-wrap items-center gap-6 text-[12px] text-muted-foreground">
             <Link to="/">Nesma Holdings</Link>
             <a href="#services">Services</a>
