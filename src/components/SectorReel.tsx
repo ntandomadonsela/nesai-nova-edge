@@ -77,7 +77,7 @@ export function SectorReel() {
     };
   }, [active]);
 
-  const scene = scenes[active];
+  const scene = scenes[active] ?? scenes[0]!;
 
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-navy shadow-[var(--shadow-lift)]">

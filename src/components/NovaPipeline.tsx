@@ -46,7 +46,7 @@ export function NovaPipeline() {
     const id = window.setInterval(() => {
       setStage((s) => (s + 1) % stages.length);
       setFeed((f) => {
-        const next = feedTemplates[(feedTemplates.indexOf(f[0]) + 5) % feedTemplates.length];
+        const next = feedTemplates[(feedTemplates.findIndex((t) => t.task === f[0]?.task) + 5) % feedTemplates.length]!;
         return [next, ...f].slice(0, 4);
       });
       setCounter((c) => c + Math.floor(40 + Math.random() * 160));
