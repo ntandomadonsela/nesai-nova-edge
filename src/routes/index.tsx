@@ -10,7 +10,7 @@ import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nesma Holdings (Pty) Ltd | Diversified African Investment Group" },
+      { title: "Nesma Holdings (Pty) Ltd" },
       {
         name: "description",
         content:
