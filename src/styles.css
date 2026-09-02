@@ -142,13 +142,151 @@
 @utility card-corporate {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 6px);
   box-shadow: var(--shadow-card);
   transition:
     transform 0.5s var(--ease),
     box-shadow 0.5s var(--ease),
     border-color 0.5s var(--ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklab, var(--navy) 18%, transparent);
+  }
 }
+
+/* Card with a hairline gradient top edge, used for feature grids */
+@utility card-edge-nova {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: var(--gradient-nova);
+    opacity: 0.85;
+    transform: scaleX(0.18);
+    transform-origin: left;
+    transition: transform 0.6s var(--ease);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+@utility card-edge-gold {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    transform: scaleX(0.18);
+    transform-origin: left;
+    transition: transform 0.6s var(--ease);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+/* Oversized gradient numeral used to index sections */
+@utility glyph-nova {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  line-height: 1;
+  background: var(--gradient-nova);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.9;
+}
+
+/* Soft aurora field for hero grounds */
+@utility aurora-nova {
+  position: relative;
+  background:
+    radial-gradient(58% 46% at 8% 0%, color-mix(in oklab, var(--nova) 14%, transparent) 0%, transparent 62%),
+    radial-gradient(52% 44% at 96% 6%, color-mix(in oklab, var(--nova-violet) 15%, transparent) 0%, transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, color-mix(in oklab, var(--nova) 6%, transparent) 0%, transparent 70%),
+    var(--background);
+}
+
+@utility hairline-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(65% 60% at 50% 25%, black, transparent);
+}
+
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 82%, transparent);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility btn-nova {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--gradient-nova);
+  box-shadow: 0 18px 40px -20px color-mix(in oklab, var(--nova) 70%, transparent);
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 50px -20px color-mix(in oklab, var(--nova) 78%, transparent);
+  }
+}
+
+@utility btn-nova-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nova);
+  border: 1px solid color-mix(in oklab, var(--nova) 35%, transparent);
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  transition:
+    background 0.4s var(--ease),
+    border-color 0.4s var(--ease);
+
+  &:hover {
+    background: var(--nova-tint);
+    border-color: var(--nova);
+  }
+}
+
 
 @utility reveal {
   opacity: 0;
