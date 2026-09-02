@@ -262,14 +262,15 @@ function NovaPage() {
         </div>
       </section>
 
-      <section id="operations" className="mx-auto max-w-7xl px-6 py-24">
+      <section id="operations" className="mx-auto max-w-7xl px-6 py-28">
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--nova)" }}>
               Governance
             </div>
-            <h2 className="mt-4 text-3xl text-navy sm:text-4xl">
-              Enterprise standards applied to every record
+            <h2 className="mt-4 text-[clamp(28px,3.6vw,46px)] leading-[1.1] text-navy">
+              Enterprise standards applied
+              <span className="text-nova-gradient block italic">to every record.</span>
             </h2>
           </div>
         </Reveal>
@@ -289,7 +290,7 @@ function NovaPage() {
             },
           ].map((c, i) => (
             <Reveal key={c.title} delay={i * 70}>
-              <div className="card-corporate h-full p-8">
+              <div className="card-corporate card-edge-nova h-full p-8">
                 <h3 className="text-xl text-navy">{c.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
               </div>
@@ -297,6 +298,7 @@ function NovaPage() {
           ))}
         </div>
       </section>
+
 
       <section id="contact" className="border-t border-border" style={{ background: "var(--nova-tint)" }}>
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1.1fr]">
