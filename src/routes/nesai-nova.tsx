@@ -109,18 +109,26 @@ function NovaPage() {
       <section
         id="overview"
         className="relative overflow-hidden border-b border-border"
-        style={{ background: "var(--nova-tint)" }}
+        style={{
+          background:
+            "radial-gradient(120% 90% at 12% 0%, var(--nova-tint) 0%, var(--background) 62%), radial-gradient(90% 80% at 92% 10%, oklch(0.95 0.045 296) 0%, transparent 60%)",
+        }}
       >
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-32">
+        <span
+          className="absolute inset-x-0 top-0 h-[3px]"
+          style={{ background: "var(--gradient-nova)" }}
+        />
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-36 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pb-32 lg:pt-40">
           <Reveal>
             <div>
               <div className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "var(--nova)" }}>
                 A division of Nesma Holdings (Pty) Ltd
               </div>
-              <img src={novaLogo.url} alt="NesAI Nova" className="mt-6 h-20 w-auto sm:h-24" />
-              <h1 className="mt-8 text-4xl leading-tight text-navy sm:text-5xl">
+              <img src={novaLogo.url} alt="NesAI Nova" className="mt-7 h-28 w-auto sm:h-36" />
+              <h1 className="mt-9 text-4xl leading-tight text-navy sm:text-5xl">
                 Human intelligence engineered for artificial intelligence
               </h1>
+              <span className="mt-6 block h-[2px] w-20" style={{ background: "var(--gradient-nova)" }} />
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
                 NesAI Nova builds, labels and evaluates the data that frontier and enterprise models
                 depend on. We combine trained African talent, disciplined quality systems and our own
@@ -130,14 +138,15 @@ function NovaPage() {
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
                   href="#services"
-                  className="rounded-md px-6 py-3 text-[12px] uppercase tracking-[0.18em] text-white"
-                  style={{ background: "var(--nova-gradient)" }}
+                  className="rounded-md px-6 py-3 text-[12px] uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90"
+                  style={{ background: "var(--gradient-nova)", boxShadow: "var(--shadow-card)" }}
                 >
                   Explore our services
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-md border border-border px-6 py-3 text-[12px] uppercase tracking-[0.18em] text-navy"
+                  className="rounded-md border px-6 py-3 text-[12px] uppercase tracking-[0.18em] transition-colors"
+                  style={{ borderColor: "var(--nova)", color: "var(--nova)" }}
                 >
                   Request a pilot
                 </a>
@@ -150,6 +159,7 @@ function NovaPage() {
           </Reveal>
         </div>
       </section>
+
 
       <section id="services" className="mx-auto max-w-7xl px-6 py-24">
         <Reveal>
