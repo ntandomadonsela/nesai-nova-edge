@@ -249,7 +249,7 @@ function NovaPage() {
                   <li key={title} className="flex gap-4">
                     <span
                       className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] text-white"
-                      style={{ background: "var(--nova-gradient)" }}
+                      style={{ background: "var(--gradient-nova)" }}
                     >
                       {i + 1}
                     </span>
