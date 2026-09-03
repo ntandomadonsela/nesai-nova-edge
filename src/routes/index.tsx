@@ -6,6 +6,8 @@ import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import nesmaLogo from "@/assets/nesma-logo.png.asset.json";
 import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
+import poultryLogo from "@/assets/sinewami-poultry-logo.jpg.asset.json";
+import foundationLogo from "@/assets/sinewami-foundation-logo.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -287,7 +289,13 @@ function HoldingsPage() {
               <div className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--gold)" }}>
                 Agricultural division
               </div>
-              <h3 className="mt-3 text-2xl text-navy">Sinewami Poultry (Pty) Ltd</h3>
+              <img
+                src={poultryLogo.url}
+                alt="Sinewami Poultry (Pty) Ltd"
+                loading="lazy"
+                className="mt-4 h-20 w-auto max-w-full rounded-md object-contain sm:h-24"
+              />
+              <h3 className="mt-5 text-2xl text-navy">Sinewami Poultry (Pty) Ltd</h3>
               <p className="mt-1 text-sm italic text-muted-foreground">Eat fresh. Buy local.</p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 Commercial poultry production focused on food security, sustainable farming practice
@@ -326,7 +334,13 @@ function HoldingsPage() {
               <div className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--gold)" }}>
                 Corporate social responsibility
               </div>
-              <h3 className="mt-3 text-2xl text-navy">Sinewami Foundation NPC</h3>
+              <img
+                src={foundationLogo.url}
+                alt="Sinewami Foundation NPC"
+                loading="lazy"
+                className="mt-4 h-16 w-auto max-w-full object-contain sm:h-20"
+              />
+              <h3 className="mt-5 text-2xl text-navy">Sinewami Foundation NPC</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 The non profit arm of the group, running targeted programmes in education, food
                 security and rural upliftment so that commercial performance translates into
