@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-import nesmaLogo from "";
+import nesmaLogo from "@/assets/nesma-logo.png";
 import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
 
 type NavItem = { label: string; href: string };
