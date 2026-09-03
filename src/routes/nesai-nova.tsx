@@ -5,7 +5,7 @@ import { NovaPipeline } from "@/components/NovaPipeline";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
-import nesmaLogo from "@/assets/nesma-logo.png.asset.json";
+import nesmaLogo from "@/assets/nesma-logo.png";
 
 export const Route = createFileRoute("/nesai-nova")({
   head: () => ({
