@@ -131,13 +131,13 @@ function HoldingsPage() {
               Middelburg, Mpumalanga · Pretoria, Gauteng · South Africa
             </span>
           </div>
-          <h1 className="mt-6 max-w-4xl text-[clamp(40px,6vw,76px)] leading-[1.05] text-navy">
+          <h1 className="mt-7 max-w-4xl text-[clamp(32px,4.8vw,60px)] leading-[1.1] text-navy">
             Building the next industrial era in Africa,
-            <span className="block italic" style={{ color: "var(--gold)" }}>
+            <span className="mt-2 block font-medium" style={{ color: "var(--gold)" }}>
               with discipline and intent.
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
             Nesma Holdings (Pty) Ltd is a diversified investment and services group creating
             sustainable value across construction, technology, agriculture, energy, logistics and
             engineering.
@@ -145,22 +145,38 @@ function HoldingsPage() {
           <div className="mt-9 flex flex-wrap gap-3">
             <a
               href="#sectors"
-              className="rounded-md bg-navy px-7 py-3.5 text-[12px] uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90"
+              className="group inline-flex items-center gap-3 rounded-md bg-navy px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
             >
               Explore the portfolio
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
             </a>
             <a
               href="#contact"
-              className="rounded-md border px-7 py-3.5 text-[12px] uppercase tracking-[0.18em] transition-colors"
+              className="inline-flex items-center rounded-md border px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors hover:bg-[color-mix(in_oklab,var(--gold)_12%,transparent)]"
               style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
             >
               Partner with the group
             </a>
           </div>
 
+          <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4">
+            {[
+              ["Established", "2019"],
+              ["Core industries", "Six"],
+              ["Operating footprint", "SA and SADC"],
+              ["Group standard", "One"],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <dt className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{k}</dt>
+                <dd className="mt-1 font-serif text-lg font-semibold text-navy">{v}</dd>
+              </div>
+            ))}
+          </dl>
+
           <div className="mt-16">
             <SectorReel />
           </div>
+
         </div>
       </section>
 
