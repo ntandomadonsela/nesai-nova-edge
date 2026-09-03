@@ -289,7 +289,13 @@ function HoldingsPage() {
               <div className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--gold)" }}>
                 Agricultural division
               </div>
-              <h3 className="mt-3 text-2xl text-navy">Sinewami Poultry (Pty) Ltd</h3>
+              <img
+                src={poultryLogo.url}
+                alt="Sinewami Poultry (Pty) Ltd"
+                loading="lazy"
+                className="mt-4 h-20 w-auto max-w-full rounded-md object-contain sm:h-24"
+              />
+              <h3 className="mt-5 text-2xl text-navy">Sinewami Poultry (Pty) Ltd</h3>
               <p className="mt-1 text-sm italic text-muted-foreground">Eat fresh. Buy local.</p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 Commercial poultry production focused on food security, sustainable farming practice
