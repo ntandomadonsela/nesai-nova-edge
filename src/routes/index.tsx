@@ -334,7 +334,13 @@ function HoldingsPage() {
               <div className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--gold)" }}>
                 Corporate social responsibility
               </div>
-              <h3 className="mt-3 text-2xl text-navy">Sinewami Foundation NPC</h3>
+              <img
+                src={foundationLogo.url}
+                alt="Sinewami Foundation NPC"
+                loading="lazy"
+                className="mt-4 h-16 w-auto max-w-full object-contain sm:h-20"
+              />
+              <h3 className="mt-5 text-2xl text-navy">Sinewami Foundation NPC</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 The non profit arm of the group, running targeted programmes in education, food
                 security and rural upliftment so that commercial performance translates into
