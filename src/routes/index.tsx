@@ -115,12 +115,10 @@ function HoldingsPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-ivory pt-36 pb-20">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.5]"
+          className="pointer-events-none absolute inset-0"
           style={{
-            backgroundImage:
-              "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
-            backgroundSize: "72px 72px",
-            maskImage: "radial-gradient(70% 60% at 50% 30%, black, transparent)",
+            background:
+              "radial-gradient(60% 50% at 20% 20%, color-mix(in oklab, var(--gold) 10%, transparent), transparent), radial-gradient(50% 45% at 85% 15%, color-mix(in oklab, var(--navy) 6%, transparent), transparent)",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6">
