@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SectorReel } from "@/components/SectorReel";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
-import nesmaLogo from "@/public/nesma-logo.png";
+import nesmaLogo from "nesai-nova-edge/public/nesma-logo.png";
 import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
 import poultryLogo from "@/assets/sinewami-poultry-logo.jpg.asset.json";
 import foundationLogo from "@/assets/sinewami-foundation-logo.jpg.asset.json";
