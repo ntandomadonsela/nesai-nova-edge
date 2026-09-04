@@ -1,4 +1,3 @@
-```tsx
 import { useState, type FormEvent } from "react";
 
 export function ContactForm({
@@ -198,4 +197,3 @@ export function ContactForm({
     </form>
   );
 }
-```
