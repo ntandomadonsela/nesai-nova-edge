@@ -128,7 +128,7 @@ function HoldingsPage() {
               style={{ animation: "pulse-dot 2.4s infinite" }}
             />
             <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-              Middelburg, Mpumalanga · Pretoria, Gauteng · South Africa
+              South Africa
             </span>
           </div>
           <h1 className="mt-7 max-w-4xl text-[clamp(32px,4.8vw,60px)] leading-[1.1] text-navy">
