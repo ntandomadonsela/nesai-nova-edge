@@ -232,7 +232,7 @@ function HoldingsPage() {
                   ["Head office", "Middelburg, Mpumalanga"],
                   ["Central office", "Pretoria, Gauteng"],
                   ["Email", "info@nesmaholdings.co.za"],
-                  ["Telephone", "+27 60 503 9241"],
+                 
                 ].map(([k, v]) => (
                   <div key={k}>
                     <dt className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
