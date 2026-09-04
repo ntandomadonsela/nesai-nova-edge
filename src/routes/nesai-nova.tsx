@@ -4,8 +4,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { NovaPipeline } from "@/components/NovaPipeline";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
-import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
-import nesmaLogo from "@/assets/nesma-logo.png";
+import novaLogo from "@/assets/nesai-nova-logo.png";
+import nesmaLogo from "@/assets/nesma-logo.webp";
 
 export const Route = createFileRoute("/nesai-nova")({
   head: () => ({
@@ -122,7 +122,7 @@ function NovaPage() {
                 />
                 A division of Nesma Holdings (Pty) Ltd
               </span>
-              <img src={novaLogo.url} alt="NesAI Nova" className="mt-8 h-28 w-auto sm:h-36" />
+              <img src={novaLogo} alt="NesAI Nova" className="mt-8 h-28 w-auto sm:h-36" />
               <h1 className="mt-9 text-[clamp(34px,4.6vw,58px)] leading-[1.06] text-navy">
                 Human intelligence,
                 <span className="text-nova-gradient block italic">engineered for machines.</span>
@@ -338,7 +338,7 @@ function NovaPage() {
 
       <footer className="border-t border-border bg-background py-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between">
-          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-14 w-auto" />
+          <img src={nesmaLogo} alt="Nesma Holdings" className="h-14 w-auto" />
           <div className="flex flex-wrap items-center gap-6 text-[12px] text-muted-foreground">
             <Link to="/">Nesma Holdings</Link>
             <a href="#services">Services</a>
