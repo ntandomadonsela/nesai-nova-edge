@@ -161,9 +161,9 @@ function HoldingsPage() {
 
           <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4">
             {[
-              ["Established", "2019"],
+              ["Established", "2025"],
               ["Core industries", "Six"],
-              ["Operating footprint", "SA and SADC"],
+              ["Operating footprint", "Global"],
               ["Group standard", "One"],
             ].map(([k, v]) => (
               <div key={k}>
