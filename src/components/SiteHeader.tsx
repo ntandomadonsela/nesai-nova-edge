@@ -39,12 +39,12 @@ export function SiteHeader({
         className="block h-[3px] w-full"
         style={{ background: isNova ? "var(--gradient-nova)" : "var(--gradient-gold)" }}
       />
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6">
         <Link to={isNova ? "/nesai-nova" : "/"} className="flex items-center">
           <img
             src={isNova ? novaLogo : nesmaLogo}
             alt={isNova ? "NesAI Nova" : "Nesma Holdings (Pty) Ltd"}
-            className={isNova ? "h-16 w-auto sm:h-[72px]" : "h-14 w-auto sm:h-16"}
+            className={isNova ? "h-20 w-auto sm:h-24" : "h-20 w-auto sm:h-24"}
           />
         </Link>
 
