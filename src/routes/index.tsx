@@ -5,9 +5,9 @@ import { SectorReel } from "@/components/SectorReel";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import nesmaLogo from "@/nesai-nova-edge/public/nesma-logo.png";
-import novaLogo from "@/assets/nesai-nova-logo.png.asset.json";
-import poultryLogo from "@/assets/sinewami-poultry-logo.jpg.asset.json";
-import foundationLogo from "@/assets/sinewami-foundation-logo.jpg.asset.json";
+import novaLogo from "@/assets/nesai-nova-logo.png";
+import poultryLogo from "@/assets/sinewami-poultry-logo.png";
+import foundationLogo from "@/assets/sinewami-foundation-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -213,7 +213,7 @@ function HoldingsPage() {
 
           <Reveal delay={120}>
             <div className="card-corporate p-8">
-              <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-16 w-auto" />
+              <img src={nesmaLogo} alt="Nesma Holdings" className="h-16 w-auto" />
               <div className="mt-8 rule-gold" />
               <div className="mt-6 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                 Office of the Managing Director
@@ -304,7 +304,7 @@ function HoldingsPage() {
                 Agricultural division
               </div>
               <img
-                src={poultryLogo.url}
+                src={poultryLogo}
                 alt="Sinewami Poultry (Pty) Ltd"
                 loading="lazy"
                 className="mt-4 h-20 w-auto max-w-full rounded-md object-contain sm:h-24"
@@ -331,7 +331,7 @@ function HoldingsPage() {
               <div className="text-[11px] uppercase tracking-[0.2em]" style={{ color: "var(--nova)" }}>
                 Artificial intelligence division
               </div>
-              <img src={novaLogo.url} alt="NesAI Nova" className="mt-4 h-14 w-auto" />
+              <img src={novaLogo} alt="NesAI Nova" className="mt-4 h-14 w-auto" />
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 The data operations and applied artificial intelligence division of Nesma Holdings,
                 delivering training data, human evaluation and managed AI trainer operations to
@@ -349,7 +349,7 @@ function HoldingsPage() {
                 Corporate social responsibility
               </div>
               <img
-                src={foundationLogo.url}
+                src={foundationLogo}
                 alt="Sinewami Foundation NPC"
                 loading="lazy"
                 className="mt-4 h-16 w-auto max-w-full object-contain sm:h-20"
@@ -449,7 +449,7 @@ function HoldingsPage() {
 
       <footer className="border-t border-border bg-background py-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between">
-          <img src={nesmaLogo.url} alt="Nesma Holdings" className="h-14 w-auto" />
+          <img src={nesmaLogo} alt="Nesma Holdings" className="h-14 w-auto" />
           <div className="flex flex-wrap items-center gap-6 text-[12px] text-muted-foreground">
             <a href="#about">About</a>
             <a href="#sectors">Sectors</a>
