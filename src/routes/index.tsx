@@ -47,8 +47,6 @@ const values = [
 
 const sectors = [
   {
-    n: "01",
-    title: "Construction and Infrastructure",
     body: "Civil engineering, commercial construction and infrastructure development delivered with precision, full compliance and lasting structural integrity.",
     tags: ["Civil engineering", "Commercial build", "Infrastructure"],
   },
