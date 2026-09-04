@@ -81,7 +81,10 @@ export function SectorReel() {
 
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-navy shadow-[var(--shadow-lift)]">
-      <div className="relative aspect-[16/9] w-full">
+      {/* Image area. On mobile this only holds the photo and the small
+          "running continuously" badge, so there is no text to collide with.
+          From the sm breakpoint up, the full caption overlays the image. */}
+      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9]">
         {scenes.map((s, i) => (
           <img
             key={s.title}
@@ -102,39 +105,58 @@ export function SectorReel() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, oklch(0.24 0.052 265 / 92%) 0%, oklch(0.24 0.052 265 / 62%) 45%, oklch(0.24 0.052 265 / 18%) 100%)",
+              "linear-gradient(180deg, oklch(0.24 0.052 265 / 55%) 0%, oklch(0.24 0.052 265 / 15%) 40%, oklch(0.24 0.052 265 / 78%) 100%)",
           }}
         />
 
-        <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-10">
-          <div className="flex items-center gap-3">
-            <span
-              className="inline-block h-2 w-2 rounded-full bg-gold"
-              style={{ animation: "pulse-dot 2s infinite" }}
-            />
-            <span className="text-[10px] uppercase tracking-[0.28em] text-white/80">
-              Group operations reel, running continuously
-            </span>
-          </div>
-
-          <div className="max-w-xl">
-            <div className="text-[11px] uppercase tracking-[0.28em] text-gold-soft">
-              Sector {scene.index}
-            </div>
-            <h3 className="mt-3 text-3xl text-white sm:text-4xl">{scene.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/75">{scene.body}</p>
-            <dl className="mt-5 flex flex-wrap gap-x-10 gap-y-3">
-              {scene.metrics.map((m) => (
-                <div key={m.label}>
-                  <dt className="text-[10px] uppercase tracking-[0.2em] text-white/50">
-                    {m.label}
-                  </dt>
-                  <dd className="text-sm text-white/90">{m.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+        <div className="absolute inset-x-0 top-0 flex items-center gap-3 p-4 sm:p-10">
+          <span
+            className="inline-block h-2 w-2 flex-shrink-0 rounded-full bg-gold"
+            style={{ animation: "pulse-dot 2s infinite" }}
+          />
+          <span className="text-[9px] uppercase tracking-[0.2em] text-white/80 sm:text-[10px] sm:tracking-[0.28em]">
+            Group operations reel, running continuously
+          </span>
         </div>
+
+        {/* Desktop and tablet caption, overlaid on the image */}
+        <div className="absolute inset-x-0 bottom-0 hidden max-w-xl p-6 sm:block sm:p-10">
+          <div className="text-[11px] uppercase tracking-[0.28em] text-gold-soft">
+            Sector {scene.index}
+          </div>
+          <h3 className="mt-3 text-3xl text-white sm:text-4xl">{scene.title}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-white/75">{scene.body}</p>
+          <dl className="mt-5 flex flex-wrap gap-x-10 gap-y-3">
+            {scene.metrics.map((m) => (
+              <div key={m.label}>
+                <dt className="text-[10px] uppercase tracking-[0.2em] text-white/50">
+                  {m.label}
+                </dt>
+                <dd className="text-sm text-white/90">{m.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      {/* Mobile-only caption. Flows in normal document order below the
+          photo, so it can never overlap it regardless of text length. */}
+      <div className="p-5 sm:hidden">
+        <div className="text-[10px] uppercase tracking-[0.24em] text-gold-soft">
+          Sector {scene.index}
+        </div>
+        <h3 className="mt-2 text-2xl text-white">{scene.title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-white/75">{scene.body}</p>
+        <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
+          {scene.metrics.map((m) => (
+            <div key={m.label}>
+              <dt className="text-[10px] uppercase tracking-[0.2em] text-white/50">
+                {m.label}
+              </dt>
+              <dd className="text-sm text-white/90">{m.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
       <div className="grid grid-cols-2 divide-x divide-white/10 border-t border-white/10 sm:grid-cols-4">
