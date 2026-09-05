@@ -237,7 +237,7 @@ function CopilotDemo() {
     setMessages((m) => [
       ...m,
       { role: "student", text },
-      { role: "tutor", text: sampleReplies[subject] ?? sampleReplies.Mathematics! },
+      { role: "tutor", text: sampleReplies[subject] ?? sampleReplies["Mathematics"]! },
     ]);
   }
 
