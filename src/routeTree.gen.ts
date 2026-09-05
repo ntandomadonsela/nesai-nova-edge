@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NesaiNovaRouteImport } from './routes/nesai-nova'
+import { Route as NovaPreviewRouteImport } from './routes/nova-preview'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const NesaiNovaRoute = NesaiNovaRouteImport.update({
   path: '/nesai-nova',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NovaPreviewRoute = NovaPreviewRouteImport.update({
+  id: '/nova-preview',
+  path: '/nova-preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/nesai-nova': typeof NesaiNovaRoute
+  '/nova-preview': typeof NovaPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/nesai-nova': typeof NesaiNovaRoute
+  '/nova-preview': typeof NovaPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/nesai-nova': typeof NesaiNovaRoute
+  '/nova-preview': typeof NovaPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/nesai-nova'
+  fullPaths: '/' | '/nesai-nova' | '/nova-preview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/nesai-nova'
-  id: '__root__' | '/' | '/nesai-nova'
+  to: '/' | '/nesai-nova' | '/nova-preview'
+  id: '__root__' | '/' | '/nesai-nova' | '/nova-preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   NesaiNovaRoute: typeof NesaiNovaRoute
+  NovaPreviewRoute: typeof NovaPreviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NesaiNovaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nova-preview': {
+      id: '/nova-preview'
+      path: '/nova-preview'
+      fullPath: '/nova-preview'
+      preLoaderRoute: typeof NovaPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   NesaiNovaRoute: NesaiNovaRoute,
+  NovaPreviewRoute: NovaPreviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
