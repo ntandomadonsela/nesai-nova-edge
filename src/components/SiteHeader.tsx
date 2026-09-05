@@ -14,10 +14,20 @@ export function SiteHeader({
   items: NavItem[];
 }) {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // Hide when scrolling down past the header, show again when scrolling
+      // up or near the top of the page (back on the first screen).
+      if (y > 120 && y > lastY) setHidden(true);
+      else setHidden(false);
+      lastY = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,8 +37,9 @@ export function SiteHeader({
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 transition-all duration-500"
+      className="fixed inset-x-0 top-0 z-50 transition-transform duration-500"
       style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
         background: scrolled ? "oklch(1 0 0 / 96%)" : "oklch(1 0 0 / 82%)",
         backdropFilter: "blur(18px)",
         borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
