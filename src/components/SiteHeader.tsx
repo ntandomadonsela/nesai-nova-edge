@@ -37,8 +37,9 @@ export function SiteHeader({
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 transition-all duration-500"
+      className="fixed inset-x-0 top-0 z-50 transition-transform duration-500"
       style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
         background: scrolled ? "oklch(1 0 0 / 96%)" : "oklch(1 0 0 / 82%)",
         backdropFilter: "blur(18px)",
         borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
